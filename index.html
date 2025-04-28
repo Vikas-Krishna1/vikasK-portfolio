@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikas Krishna - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            color: #0078d7;
+        }
+        .projects, .certifications {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            background-color: #e0e0e0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #0078d7;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vikas Krishna</h1>
+        <p>I'm Vikas Krishna — I build creative apps, love cybersecurity and AI, and aim to solve real-world problems through software.</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am an aspiring software engineer and incoming Computer Science student at Stony Brook University.
+            I am passionate about building impactful software solutions, with interests in cybersecurity, artificial intelligence, and mobile app development.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div>
+                <h3>Mynance</h3>
+                <p>A finance tracker app built using SwiftUI to help users track income and expenditures, with persistent storage features.</p>
+            </div>
+            <div>
+                <h3>Anagrams</h3>
+                <p>A SwiftUI-based word game where users form as many words as possible from a root word, with scoring and validation features.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certifications">
+            <div>
+                <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+                <h4>Certiport Cybersecurity Certification</h4>
+            </div>
+            <div>
+                <img src="images/ai-python-certification.jpg" alt="AI and Python Certification" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+                <h4>AI and Python Certifications - UTD</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <a class="button" href="https://www.linkedin.com/in/placeholder" target="_blank">LinkedIn</a>
+        <a class="button" href="https://github.com/placeholder" target="_blank">GitHub</a>
+        <p>Email: <a href="mailto:vikas.krishna@example.com">vikas.krishna@example.com</a></p>
+    </section>
+
+    <footer>
+        &copy; 2025 Vikas Krishna | All Rights Reserved
+    </footer>
+</body>
+</html>
