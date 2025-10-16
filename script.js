@@ -1,59 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("particle-canvas");
-  const ctx = canvas.getContext("2d");
+/* === PARTICLES.JS LIGHTNING NETWORK EFFECT === */
+/* Make sure you have <div id="particles-js"></div> in your index.html */
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const particles = [];
-  const particleCount = 100;
-
-  class Particle {
-    constructor() {
-      this.reset();
-    }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 1.5;
-      this.speedY = (Math.random() - 0.5) * 1.5;
-      this.alpha = Math.random() * 0.6 + 0.4;
-      this.color = `hsl(${Math.random() * 60 + 180}, 100%, 60%)`;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-        this.reset();
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 90,
+      density: { enable: true, value_area: 800 }
+    },
+    color: { value: "#00ccff" }, // cyan glow
+    shape: { type: "circle" },
+    opacity: {
+      value: 0.6,
+      random: true,
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false
       }
+    },
+    size: {
+      value: 2,
+      random: true
+    },
+    line_linked: {
+      enable: true,
+      distance: 130,
+      color: "#00ffff",
+      opacity: 0.6,
+      width: 1.3
+    },
+    move: {
+      enable: true,
+      speed: 1.8,
+      direction: "none",
+      random: true,
+      straight: false,
+      out_mode: "out",
+      attract: { enable: false }
     }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = 20;
-      ctx.shadowColor = this.color;
-      ctx.fill();
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      repulse: { distance: 150, duration: 0.4 },
+      push: { particles_nb: 3 }
     }
-  }
+  },
+  retina_detect: true
+});
 
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animate);
-  }
-  animate();
-
-  window.addEventListener("resize", () => {
+/* === RESPONSIVE CANVAS RESIZE === */
+window.addEventListener("resize", () => {
+  const canvas = document.querySelector("#particles-js > canvas");
+  if (canvas) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  });
+  }
 });
