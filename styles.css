@@ -1,103 +1,122 @@
 /* === RESET === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* === BASE === */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #0b0f16;
   color: #e6edf3;
   overflow-x: hidden;
   position: relative;
 }
 
-/* === CANVASES === */
-#particle-canvas,
-#lightning-canvas {
+/* === PARTICLE CANVAS === */
+#particle-canvas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: 0;
+  background: radial-gradient(circle at top left, #0b0f16 0%, #05070a 100%);
 }
 
 /* === HEADER === */
 header {
-  position: relative;
-  z-index: 2;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem 2rem;
   background: rgba(15, 20, 28, 0.6);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  margin: 4rem auto 2rem;
-  width: 90%;
-  max-width: 1000px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
-header h1 {
-  color: #00e6ff;
-  font-size: 2.8rem;
+.animated-name {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00ffff, #0088ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: nameGlow 5s linear infinite;
+}
+
+@keyframes nameGlow {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
 header p {
   font-size: 1.1rem;
   max-width: 700px;
-  margin: 1rem auto 2rem;
-  font-weight: 300;
+  margin: 1rem auto;
 }
 
-/* === NAV BUTTONS === */
-nav {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.button {
-  background: linear-gradient(90deg, #00ffff, #00bfff, #0077ff);
-  padding: 12px 26px;
-  border-radius: 10px;
-  text-decoration: none;
+.nav-btn {
+  margin: 0.4rem;
+  background: transparent;
+  border: 2px solid #00c8ff;
+  color: #00c8ff;
+  padding: 10px 18px;
+  border-radius: 6px;
   font-weight: 600;
-  color: #0d1117;
-  border: none;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
 }
 
-.button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 35px rgba(0, 255, 255, 0.8);
-  background: linear-gradient(90deg, #00ccff, #007bff, #00ffff);
+.nav-btn:hover {
+  background: #00c8ff;
+  color: #0b0f16;
+  box-shadow: 0 0 20px #00ffff;
 }
 
 /* === SECTIONS === */
 section {
   position: relative;
-  z-index: 2;
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
-  background: rgba(12, 18, 28, 0.85);
+  z-index: 1;
+  padding: 2rem;
+  max-width: 950px;
+  margin: 2.5rem auto;
+  background: rgba(12, 18, 28, 0.7);
+  border: 2px solid rgba(0, 255, 255, 0.3);
   border-radius: 14px;
-  border: 3px solid rgba(0, 255, 255, 0.3);
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
 }
 
 h2 {
-  color: #00e6ff;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  color: #00c8ff;
+  margin-bottom: 1rem;
+}
+
+/* === SKILLS === */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.skill span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00c8ff, #66e0ff);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff;
 }
 
 /* === PROJECT CARDS === */
@@ -105,72 +124,78 @@ h2 {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 2.5rem;
-  padding: 1rem 0 2rem;
+  gap: 2rem;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
 }
 
 .project-card {
-  flex: 0 0 300px;
-  background: rgba(10, 15, 25, 0.95);
-  padding: 2rem;
-  border-radius: 14px;
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 260px;
+  flex: 0 0 280px;
+  background: rgba(10, 15, 25, 0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card p {
-  flex: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  border-color: #00ffff;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* === BUTTONS === */
+.button {
+  display: inline-block;
+  background: #00c8ff;
+  color: #0b0f16;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.button:hover {
+  background: #66e0ff;
+  box-shadow: 0 0 20px #00ffff;
 }
 
 /* === CERTIFICATIONS === */
 .certifications {
   display: flex;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
 }
 
 .certifications img {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
 }
 
 /* === CONTACT === */
-#contact {
-  text-align: center;
-  border: 3px solid rgba(0, 255, 255, 0.4);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
-  padding: 2rem;
+.contact-buttons {
+  margin-top: 1rem;
 }
 
-#contact a {
-  color: #00e6ff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-#contact a:hover {
-  color: #66f2ff;
-}
-
-/* === FOOTER === */
 footer {
   text-align: center;
   padding: 2rem;
-  color: #888;
-  z-index: 2;
+  color: #aaa;
+}
+
+/* === ANIMATIONS === */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
