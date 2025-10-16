@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vikas Krishna - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <canvas id="particle-canvas"></canvas>
 
   <header>
-    <h1 class="animated-name">Vikas Krishna</h1>
-    <p class="typewriter">
-      I build creative apps, love cybersecurity and AI, and aim to solve real-world problems through software.
-    </p>
+    <h1 class="animated-name">Hi, I’m [Your Name]</h1>
+    <p>A passionate developer blending creativity, design, and code.</p>
     <nav>
       <button class="nav-btn" onclick="scrollToSection('about')">About</button>
       <button class="nav-btn" onclick="scrollToSection('skills')">Skills</button>
       <button class="nav-btn" onclick="scrollToSection('projects')">Projects</button>
-      <button class="nav-btn" onclick="scrollToSection('certifications')">Certifications</button>
       <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
     </nav>
   </header>
@@ -28,25 +23,21 @@
   <section id="about" class="fade-section">
     <h2>About Me</h2>
     <p>
-      Hi, I’m <strong>Vikas Krishna</strong>, a passionate Computer Science student at Stony Brook University.
-      I specialize in building intuitive, high-performance full-stack applications and iOS apps that merge creativity
-      with functionality. My interests span across <strong>AI development, cybersecurity, and automation</strong>.
-      I believe in using technology to make productivity tools smarter, safer, and more accessible.
-      <br><br>
-      Beyond coding, I explore UI/UX design, cloud integrations, and ethical hacking. I’m always curious about how
-      software can solve real-world problems — whether through efficient app design, creative AI integration, or
-      secure system architecture.
+      I’m a developer who loves crafting immersive experiences that merge tech
+      and art. My passion lies in building creative web apps, designing
+      interfaces with personality, and pushing the limits of modern front-end
+      tech. I experiment with animation, physics effects, and motion design to
+      create unique interactions.
     </p>
   </section>
 
   <section id="skills" class="fade-section">
     <h2>Skills</h2>
     <div class="skills-container">
-      <div class="skill"><span>Swift / SwiftUI</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-      <div class="skill"><span>Python & AI</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-      <div class="skill"><span>Cybersecurity</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-      <div class="skill"><span>Full Stack (React, Node)</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-      <div class="skill"><span>UI / UX Design</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+      <div class="skill"><span>HTML</span><div class="bar"><div class="fill" style="width: 95%;"></div></div></div>
+      <div class="skill"><span>CSS</span><div class="bar"><div class="fill" style="width: 90%;"></div></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill" style="width: 85%;"></div></div></div>
+      <div class="skill"><span>React</span><div class="bar"><div class="fill" style="width: 80%;"></div></div></div>
     </div>
   </section>
 
@@ -54,48 +45,27 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="project-card">
-        <h3>StudyMate</h3>
-        <p>A productivity app combining budgeting, task planning, and AI features built using SwiftUI.</p>
-        <a class="button" href="studymate.html">View Project</a>
+        <h3>MyName App</h3>
+        <p>A sleek name animation tool using CSS and JS effects.</p>
+        <a href="myname.html" class="button">View Project</a>
       </div>
       <div class="project-card">
-        <h3>Mynance</h3>
-        <p>A finance tracker app that helps users manage expenses using CoreData for persistence.</p>
-        <a class="button" href="mynance.html">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Anagrams</h3>
-        <p>A SwiftUI word game where users form valid words from a root word with scoring logic.</p>
-        <a class="button" href="anagrams.html">View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="certifications" class="fade-section">
-    <h2>Certifications</h2>
-    <div class="certifications">
-      <div>
-        <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification" />
-        <h4>Certiport Cybersecurity Certification</h4>
-      </div>
-      <div>
-        <img src="images/ai-python-certification.jpg" alt="AI and Python Certification" />
-        <h4>AI and Python Certifications - UTD</h4>
+        <h3>Anagram Solver</h3>
+        <p>Interactive tool that generates word combinations in real-time.</p>
+        <a href="anagrams.html" class="button">View Project</a>
       </div>
     </div>
   </section>
 
   <section id="contact" class="fade-section">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:vikas.krishna200007@gmail.com">vikas.krishna200007@gmail.com</a></p>
-    <p>Phone: 214-551-9213</p>
-    <div class="contact-buttons">
-      <a class="button" href="https://www.linkedin.com/in/vikas-krishna-9b5b862a5" target="_blank">LinkedIn</a>
-      <a class="button" href="https://github.com/Vikas-Krishna1" target="_blank">GitHub</a>
-    </div>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>Phone: +1 (555) 123-4567</p>
   </section>
 
-  <footer>© 2025 Vikas Krishna | All Rights Reserved</footer>
+  <footer>© 2025 Your Name</footer>
+
+  <script src="particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
