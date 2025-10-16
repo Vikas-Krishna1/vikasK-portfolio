@@ -1,13 +1,15 @@
+/* ===== Global Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== Background & Fonts ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  color: #f0f0f0;
-  background: radial-gradient(circle at top left, #1a1a2e, #0f0f1a);
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: #f4f4f4;
   overflow-x: hidden;
 }
 
@@ -18,10 +20,10 @@ body {
   z-index: -1;
 }
 
-/* ===== HEADER ===== */
+/* ===== Header Section ===== */
 header {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 6rem 1rem 3rem 1rem;
 }
 
 header h1 {
@@ -29,69 +31,76 @@ header h1 {
   background: linear-gradient(90deg, #00c6ff, #ff758c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
 header p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #f0f0f0;
 }
 
 .header-buttons {
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 10px 20px;
+  margin: 5px;
   border-radius: 8px;
   background: linear-gradient(90deg, #00c6ff, #ff758c);
   color: white;
   text-decoration: none;
-  margin: 5px;
-  transition: opacity 0.3s;
   font-weight: bold;
+  transition: transform 0.2s ease, opacity 0.2s;
 }
 
 .button:hover {
-  opacity: 0.85;
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
+/* ===== Navbar ===== */
 nav {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: #00c6ff;
-  text-decoration: none;
+  color: white;
   font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ff758c;
+  color: #00c6ff;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== Section Layout ===== */
 section {
   max-width: 1000px;
   margin: 3rem auto;
   padding: 2rem;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== Titles ===== */
 h2 {
   text-align: center;
   margin-bottom: 1.5rem;
+  font-size: 2rem;
   color: #00c6ff;
 }
 
-/* ===== PROJECTS ===== */
+/* ===== Project Cards ===== */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -99,22 +108,24 @@ h2 {
 }
 
 .projects div {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
-  border-radius: 12px;
-  transition: transform 0.3s, background 0.3s;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .projects div:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .projects h3 {
-  color: #ff758c;
+  color: #ff90b3;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
-/* ===== CERTIFICATIONS ===== */
+/* ===== Certifications ===== */
 .certifications {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -124,30 +135,31 @@ h2 {
 
 .certifications img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   margin-bottom: 0.5rem;
 }
 
-/* ===== CONTACT ===== */
+/* ===== Contact Section ===== */
 #contact {
   text-align: center;
 }
 
 #contact a {
   color: #00c6ff;
+  text-decoration: none;
 }
 
 #contact a:hover {
   color: #ff758c;
 }
 
-/* ===== FOOTER ===== */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 2rem;
-  color: #aaa;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
-  background: rgba(255,255,255,0.05);
-  border-top: 1px solid rgba(255,255,255,0.1);
 }
