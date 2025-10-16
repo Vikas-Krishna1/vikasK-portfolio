@@ -4,76 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vikas Krishna - Portfolio</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Particle canvas background -->
+  <!-- Particle Background -->
   <canvas id="particle-canvas"></canvas>
 
-  <header>
-    <h1>Vikas Krishna</h1>
-    <p>I'm Vikas Krishna — I build creative apps, love cybersecurity and AI, and aim to solve real-world problems through software.</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- Page Content -->
+  <div id="content">
+    <header>
+      <h1>Vikas Krishna</h1>
+      <p>I'm Vikas Krishna — I build creative apps, love cybersecurity and AI, and aim to solve real-world problems through software.</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a Computer Science student at Stony Brook University who loves building apps and full-stack projects that make productivity and learning easier.</p>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m a Computer Science student at Stony Brook University who loves building apps and full-stack projects that make productivity and learning easier.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>StudyMate</h3>
-        <p>A productivity app combining budgeting, task planning, and AI features built using SwiftUI.</p>
-        <a class="button" href="studymate.html">View Project</a>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>StudyMate</h3>
+          <p>A productivity app combining budgeting, task planning, and AI features built using SwiftUI.</p>
+          <a class="button" href="studymate.html">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Mynance</h3>
+          <p>A finance tracker app that helps users manage expenses using CoreData for persistence.</p>
+          <a class="button" href="mynance.html">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Anagrams</h3>
+          <p>A SwiftUI word game where users form valid words from a root word with scoring logic.</p>
+          <a class="button" href="anagrams.html">View Project</a>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Mynance</h3>
-        <p>A finance tracker app that helps users manage expenses using CoreData for persistence.</p>
-        <a class="button" href="mynance.html">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Anagrams</h3>
-        <p>A SwiftUI word game where users form valid words from a root word with scoring logic.</p>
-        <a class="button" href="anagrams.html">View Project</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="certifications">
-      <div>
-        <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification">
-        <h4>Certiport Cybersecurity Certification</h4>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications">
+        <div>
+          <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification">
+          <h4>Certiport Cybersecurity Certification</h4>
+        </div>
+        <div>
+          <img src="images/ai-python-certification.jpg" alt="AI and Python Certification">
+          <h4>AI and Python Certifications - UTD</h4>
+        </div>
       </div>
-      <div>
-        <img src="images/ai-python-certification.jpg" alt="AI and Python Certification">
-        <h4>AI and Python Certifications - UTD</h4>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <a class="button" href="https://www.linkedin.com/in/vikas-krishna-9b5b862a5" target="_blank">LinkedIn</a>
-    <a class="button" href="https://github.com/Vikas-Krishna1" target="_blank">GitHub</a>
-    <p>Email: <a href="mailto:vikas.krishna200007@gmail.com">vikas.krishna200007@gmail.com</a></p>
-    <p>Phone: 214-551-9213</p>
-  </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <a class="button" href="https://www.linkedin.com/in/vikas-krishna-9b5b862a5" target="_blank">LinkedIn</a>
+      <a class="button" href="https://github.com/Vikas-Krishna1" target="_blank">GitHub</a>
+      <p>Email: <a href="mailto:vikas.krishna200007@gmail.com">vikas.krishna200007@gmail.com</a></p>
+      <p>Phone: 214-551-9213</p>
+    </section>
 
-  <footer>
-    &copy; 2025 Vikas Krishna | All Rights Reserved
-  </footer>
+    <footer>
+      &copy; 2025 Vikas Krishna | All Rights Reserved
+    </footer>
+  </div>
 
+  <!-- Script (load last so canvas works) -->
   <script src="script.js"></script>
 </body>
 </html>
