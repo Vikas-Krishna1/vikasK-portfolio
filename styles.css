@@ -1,32 +1,39 @@
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* === BASE === */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0a0f16;
+  background-color: #0b0f16;
   color: #e6edf3;
   overflow-x: hidden;
+  position: relative;
 }
 
+/* === PARTICLE CANVAS === */
 #particle-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
+  background: radial-gradient(circle at top left, #0b0f16 0%, #05070a 100%);
 }
 
-/* Header */
+/* === HEADER === */
 header {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 3rem 1rem;
-  background: rgba(20, 25, 31, 0.85);
+  background: rgba(15, 20, 28, 0.6);
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
 }
 
 header h1 {
@@ -41,6 +48,10 @@ header p {
   font-weight: 300;
 }
 
+nav {
+  margin-top: 1rem;
+}
+
 nav a {
   color: #00c8ff;
   text-decoration: none;
@@ -53,11 +64,14 @@ nav a:hover {
   color: #66e0ff;
 }
 
+/* === SECTIONS === */
 section {
+  position: relative;
+  z-index: 1;
   padding: 2rem;
   max-width: 900px;
   margin: 2rem auto;
-  background: rgba(15, 20, 30, 0.8);
+  background: rgba(12, 18, 28, 0.75);
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
 }
@@ -67,7 +81,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Project Cards */
+/* === PROJECT CARDS === */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -86,6 +100,7 @@ h2 {
   transform: scale(1.03);
 }
 
+/* === BUTTONS === */
 .button {
   display: inline-block;
   background: #00c8ff;
@@ -101,8 +116,17 @@ h2 {
   background: #66e0ff;
 }
 
-/* Footer */
+/* === CERTIFICATIONS === */
+.certifications img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.1);
+}
+
+/* === FOOTER === */
 footer {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 2rem;
   color: #aaa;
