@@ -1,134 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vikas Krishna - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <header>
+    <h1>Vikas Krishna</h1>
+    <p>I'm Vikas Krishna — I build creative apps, love cybersecurity and AI, and aim to solve real-world problems through software.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am an aspiring software engineer and Computer Science student at Stony Brook University.
+      I’m passionate about building impactful software solutions with interests in cybersecurity,
+      AI, and iOS development.
+    </p>
+  </section>
 
-/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>StudyMate</h3>
+        <p>A productivity app combining budgeting, task planning, and AI chat features built using SwiftUI.</p>
+        <a class="button" href="studymate.html">View Project</a>
+      </div>
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #0a0a1f, #020212);
-  color: #f0f0f0;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+      <div class="project-card">
+        <h3>Mynance</h3>
+        <p>A finance tracker app built with SwiftUI to manage income and expenses, using CoreData for persistence.</p>
+        <a class="button" href="mynance.html">View Project</a>
+      </div>
 
-/* Particle Canvas */
-canvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
-}
+      <div class="project-card">
+        <h3>Anagrams</h3>
+        <p>A fun SwiftUI game where players create words from a root word, with scoring and validation logic.</p>
+        <a class="button" href="anagrams.html">View Project</a>
+      </div>
+    </div>
+  </section>
 
-/* Header / Hero */
-header {
-  text-align: center;
-  padding: 5rem 1rem 3rem;
-  color: #fff;
-}
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div>
+        <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification">
+        <h4>Certiport Cybersecurity Certification</h4>
+      </div>
+      <div>
+        <img src="images/ai-python-certification.jpg" alt="AI and Python Certification">
+        <h4>AI and Python Certifications - UTD</h4>
+      </div>
+    </div>
+  </section>
 
-header h1 {
-  font-size: 3rem;
-  color: #00aaff;
-  text-shadow: 0 0 10px #00aaff;
-}
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <a class="button" href="https://www.linkedin.com/in/vikas-krishna-9b5b862a5" target="_blank">LinkedIn</a>
+    <a class="button" href="https://github.com/Vikas-Krishna1" target="_blank">GitHub</a>
+    <p>Email: <a href="mailto:vikas.krishna200007@gmail.com">vikas.krishna200007@gmail.com</a></p>
+    <p>Phone: 214-551-9213</p>
+  </section>
 
-header p {
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 1.1rem;
-  color: #d6d6e8;
-}
+  <footer>
+    &copy; 2025 Vikas Krishna | All Rights Reserved
+  </footer>
 
-nav {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav a {
-  color: #00aaff;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: #00aaff;
-  transition: width 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Sections */
-section {
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background: rgba(20, 20, 40, 0.6);
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
-}
-
-h2 {
-  color: #00aaff;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Card Grid */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  background-color: #00aaff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 1rem;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background-color: #0080cc;
-}
-
-/* Contact + Footer */
-#contact {
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: #888;
-  font-size: 0.9rem;
-}
+  <script src="script.js"></script>
+</body>
+</html>
