@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.height = window.innerHeight;
 
   const particles = [];
-  const particleCount = 75;
+  const particleCount = 80;
 
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 3 + 1,
-      speedX: (Math.random() - 0.5) * 0.8,
-      speedY: (Math.random() - 0.5) * 0.8,
+      speedX: (Math.random() - 0.5) * 1.2,
+      speedY: (Math.random() - 0.5) * 1.2,
       alpha: Math.random() * 0.6 + 0.4
     });
   }
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     particles.forEach(p => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 200, 255, ${p.alpha})`;
+      ctx.fillStyle = `rgba(0, 255, 255, ${p.alpha})`;
       ctx.shadowBlur = 20;
       ctx.shadowColor = "#00ffff";
       ctx.fill();
