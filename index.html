@@ -2,118 +2,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Krishna - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikas Krishna | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
 
-    <!-- Particle Animation Background -->
-    <div id="particles-js"></div>
+  <header>
+    <h1>Vikas Krishna</h1>
+    <p>🚀 Aspiring Computer Science Engineer | iOS Developer | AI & Cybersecurity Enthusiast</p>
+    <div class="header-buttons">
+      <a href="#projects" class="button">View Projects</a>
+      <a href="Vikas_Krishna_Resume.pdf" class="button" target="_blank">Download Resume</a>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <h1>Vikas Krishna</h1>
-        <p>🚀 Aspiring Computer Science Engineer | iOS Developer | AI & Cybersecurity Enthusiast</p>
-        <div class="header-buttons">
-            <a class="button" href="#projects">View Projects</a>
-            <a class="button" href="Vikas-Krishna-Resume.pdf" download>Download Resume</a>
-        </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Vikas Krishna — a Computer Science student at Stony Brook University passionate about building practical,
+      creative, and human-centered technology. From iOS apps to web tools, I enjoy combining design and logic to solve real-world problems.
+      My interests include AI, cybersecurity, and full-stack development.
+    </p>
+  </section>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I'm Vikas Krishna — a Computer Science student at Stony Brook University with a passion for building 
-            practical, creative, and human-centered technology. From iOS apps to web tools, I enjoy combining design 
-            and logic to solve real-world problems. My interests include AI, cybersecurity, and full-stack development.
-        </p>
-    </section>
+      <div class="project-card">
+        <h3>📱 StudyMate</h3>
+        <p>A SwiftUI-based productivity app combining budgeting, scheduling, and AI study assistance.
+        Features persistent CoreData storage and dark mode UI.</p>
+        <a href="https://github.com/Vikas-Krishna1/StudyMate" target="_blank" class="button">View on GitHub</a>
+      </div>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
+      <div class="project-card">
+        <h3>💰 Mynance</h3>
+        <p>A personal finance app that tracks income and expenses using SwiftUI,
+        providing categorized insights and persistent data management.</p>
+        <a href="https://github.com/Vikas-Krishna1/Mynance" target="_blank" class="button">View on GitHub</a>
+      </div>
 
-            <div>
-                <h3>📱 StudyMate</h3>
-                <p>
-                    A SwiftUI-based productivity app combining budgeting, scheduling, and AI study assistance. 
-                    Features persistent CoreData storage and dark mode UI.
-                </p>
-                <a class="button" href="https://github.com/Vikas-Krishna1/StudyMate" target="_blank">View on GitHub</a>
-            </div>
+      <div class="project-card">
+        <h3>🔤 Anagrams Game</h3>
+        <p>A word puzzle game built in SwiftUI where users form words from a root word,
+        featuring live scoring and difficulty levels.</p>
+        <a href="https://github.com/Vikas-Krishna1/Anagrams" target="_blank" class="button">View on GitHub</a>
+      </div>
 
-            <div>
-                <h3>💰 Mynance</h3>
-                <p>
-                    A personal finance app that tracks income and expenses using SwiftUI, providing categorized 
-                    insights and persistent data management.
-                </p>
-                <a class="button" href="https://github.com/Vikas-Krishna1/Mynance" target="_blank">View on GitHub</a>
-            </div>
+      <div class="project-card">
+        <h3>🧠 Project Quack</h3>
+        <p>Team-based software initiative under Stony Brook’s Computer Science Society.
+        Focuses on collaborative web projects that enhance accessibility and usability.</p>
+      </div>
 
-            <div>
-                <h3>🔠 Anagrams Game</h3>
-                <p>
-                    A word puzzle game built in SwiftUI where users form words from a root word, featuring 
-                    live scoring and difficulty levels.
-                </p>
-                <a class="button" href="https://github.com/Vikas-Krishna1/Anagrams" target="_blank">View on GitHub</a>
-            </div>
+    </div>
+  </section>
 
-            <div>
-                <h3>💻 Project Quack</h3>
-                <p>
-                    Team-based software initiative under Stony Brook’s Computer Science Society. Focuses on 
-                    collaborative web projects that enhance accessibility and usability.
-                </p>
-                <a class="button" href="https://github.com/Project-Quack" target="_blank">View Team Repo</a>
-            </div>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div>
+        <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification" />
+        <h4>Certiport Cybersecurity Certification</h4>
+      </div>
+      <div>
+        <img src="images/ai-python-certification.jpg" alt="AI and Python Certification" />
+        <h4>AI and Python Certifications - UTD</h4>
+      </div>
+    </div>
+  </section>
 
-        </div>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <a class="button" href="https://www.linkedin.com/in/vikas-krishna-9b5b862a5" target="_blank">LinkedIn</a>
+    <a class="button" href="https://github.com/Vikas-Krishna1" target="_blank">GitHub</a>
+    <p>Email: <a href="mailto:vikas.krishna200007@gmail.com">vikas.krishna200007@gmail.com</a></p>
+    <p>Phone: 214-551-9213</p>
+  </section>
 
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certifications">
-            <div>
-                <img src="images/cybersecurity-certification.jpg" alt="Cybersecurity Certification">
-                <h4>Certiport Cybersecurity Certification</h4>
-            </div>
-            <div>
-                <img src="images/ai-python-certification.jpg" alt="AI and Python Certification">
-                <h4>AI and Python Certification - UTD</h4>
-            </div>
-        </div>
-    </section>
+  <footer>
+    © 2025 Vikas Krishna | All Rights Reserved
+  </footer>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <a class="button" href="https://www.linkedin.com/in/vikas-krishna-9b5b862a5" target="_blank">LinkedIn</a>
-        <a class="button" href="https://github.com/Vikas-Krishna1" target="_blank">GitHub</a>
-        <p>Email: <a href="mailto:vikas.krishna200007@gmail.com">vikas.krishna200007@gmail.com</a></p>
-        <p>📞 214-551-9213</p>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        &copy; 2025 Vikas Krishna | Built with ❤️ in Swift, JS, and HTML
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="script.js"></script>
+  <script src="particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
