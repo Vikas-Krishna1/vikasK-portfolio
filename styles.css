@@ -1,128 +1,115 @@
-/* === RESET === */
+/* === GLOBAL STYLES === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
-/* === BASE === */
 body {
-  font-family: 'Poppins', sans-serif;
+  background: #0b0f16;
   color: #e6edf3;
-  background: linear-gradient(135deg, #0b0f16, #151d28, #08121c);
   overflow-x: hidden;
-  position: relative;
+  min-height: 100vh;
 }
 
-/* === PARTICLE CANVAS === */
-#particle-canvas {
+/* === PARTICLES BACKGROUND === */
+#particles-js {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, #0b0f16 0%, #000000 100%);
 }
 
-/* === HEADER === */
-header {
+/* === MAIN CONTENT === */
+.content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 3rem 1rem;
-  background: rgba(15, 20, 28, 0.5);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
 }
-header h1 {
-  color: #00c8ff;
+
+/* === HEADINGS & TEXT === */
+h1 {
   font-size: 2.8rem;
-}
-header p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 1rem auto;
-  font-weight: 300;
-}
-nav {
-  margin-top: 1rem;
-}
-nav a {
-  color: #00c8ff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-nav a:hover {
-  color: #66e0ff;
-}
-
-/* === SECTIONS === */
-section {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  background: rgba(12, 18, 28, 0.8);
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.08);
-}
-h2 {
-  color: #00c8ff;
+  font-weight: 700;
+  color: #00ffff;
   margin-bottom: 1rem;
 }
 
-/* === PROJECT CARDS === */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-.project-card {
-  background: rgba(10, 15, 25, 0.9);
-  padding: 1.5rem;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-}
-.project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  color: #66e0ff;
 }
 
-/* === BUTTONS === */
-.button {
-  display: inline-block;
-  background: #00c8ff;
-  color: #0d1117;
-  padding: 10px 20px;
-  border-radius: 6px;
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* === NAVIGATION === */
+nav {
+  margin-top: 1.2rem;
+}
+
+nav a {
+  color: #00ccff;
+  margin-right: 1rem;
   text-decoration: none;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: 0.3s ease;
-  z-index: 2;
-  position: relative;
-}
-.button:hover {
-  background: #66e0ff;
-  transform: translateY(-2px);
+  transition: 0.3s;
 }
 
-/* === CERTIFICATIONS === */
-.certifications img {
-  width: 100%;
+nav a:hover {
+  color: #66ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* === PROJECTS === */
+.project {
+  margin-top: 2rem;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+/* === BUTTON === */
+.btn {
+  display: inline-block;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.15);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00ffff;
+  color: #0b0f16;
+  box-shadow: 0 0 20px #00ffff;
 }
 
 /* === FOOTER === */
 footer {
-  position: relative;
-  z-index: 1;
   text-align: center;
-  padding: 2rem;
-  color: #aaa;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #88a0a8;
 }
