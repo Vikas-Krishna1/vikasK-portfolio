@@ -1,28 +1,18 @@
 /* === PARTICLES.JS LIGHTNING NETWORK EFFECT === */
-/* Make sure you have <div id="particles-js"></div> in your index.html */
-
 particlesJS("particles-js", {
   particles: {
     number: {
       value: 90,
       density: { enable: true, value_area: 800 }
     },
-    color: { value: "#00ccff" }, // cyan glow
+    color: { value: "#00ccff" },
     shape: { type: "circle" },
     opacity: {
       value: 0.6,
       random: true,
-      anim: {
-        enable: true,
-        speed: 1,
-        opacity_min: 0.1,
-        sync: false
-      }
+      anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
     },
-    size: {
-      value: 2,
-      random: true
-    },
+    size: { value: 2, random: true },
     line_linked: {
       enable: true,
       distance: 130,
@@ -55,7 +45,7 @@ particlesJS("particles-js", {
   retina_detect: true
 });
 
-/* === RESPONSIVE CANVAS RESIZE === */
+/* === ENSURE CANVAS RESIZES CORRECTLY === */
 window.addEventListener("resize", () => {
   const canvas = document.querySelector("#particles-js > canvas");
   if (canvas) {
