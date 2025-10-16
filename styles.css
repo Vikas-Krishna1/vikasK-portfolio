@@ -1,11 +1,12 @@
-/* === GLOBAL STYLES === */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
+/* === BASE === */
 body {
   background: #0b0f16;
   color: #e6edf3;
@@ -28,65 +29,85 @@ body {
 .content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* === HEADINGS & TEXT === */
-h1 {
+/* === INTRO SECTION === */
+.intro {
+  text-align: center;
+  background: rgba(15, 25, 35, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.intro h1 {
   font-size: 2.8rem;
-  font-weight: 700;
   color: #00ffff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-top: 3rem;
-  color: #66e0ff;
+.intro p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
 }
 
-h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-/* === NAVIGATION === */
 nav {
   margin-top: 1.2rem;
 }
 
 nav a {
   color: #00ccff;
-  margin-right: 1rem;
+  margin: 0 12px;
   text-decoration: none;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 nav a:hover {
   color: #66ffff;
-  text-shadow: 0 0 10px #00ffff;
+  text-shadow: 0 0 8px #00ffff;
 }
 
-/* === PROJECTS === */
+/* === SECTION CARD STYLE === */
+.section-card {
+  background: rgba(15, 20, 28, 0.7);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+.section-card h2 {
+  color: #00c8ff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+/* === PROJECT CARDS INSIDE === */
 .project {
-  margin-top: 2rem;
-  background: rgba(0, 255, 255, 0.05);
+  background: rgba(10, 15, 25, 0.8);
+  padding: 1.3rem;
+  margin-bottom: 1.2rem;
   border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
 }
 
 /* === BUTTON === */
@@ -98,6 +119,7 @@ nav a:hover {
   border-radius: 8px;
   text-decoration: none;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 .btn:hover {
@@ -106,10 +128,26 @@ nav a:hover {
   box-shadow: 0 0 20px #00ffff;
 }
 
+/* === CONTACT SECTION === */
+.contact-section {
+  text-align: center;
+}
+
+.contact-section a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px #00ffff;
+}
+
 /* === FOOTER === */
 footer {
   text-align: center;
-  margin-top: 4rem;
-  font-size: 0.9rem;
-  color: #88a0a8;
+  color: #8aa1ad;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  margin-top: auto;
 }
