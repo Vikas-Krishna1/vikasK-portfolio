@@ -1,43 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("particle-canvas");
   const ctx = canvas.getContext("2d");
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
   const particles = [];
-  const particleCount = 80;
+  const particleCount = 100;
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 1.5;
+      this.speedY = (Math.random() - 0.5) * 1.5;
+      this.alpha = Math.random() * 0.6 + 0.4;
+      this.color = `hsl(${Math.random() * 60 + 180}, 100%, 60%)`;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        this.reset();
+      }
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = 20;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+    }
+  }
 
   for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 3 + 1,
-      speedX: (Math.random() - 0.5) * 1.2,
-      speedY: (Math.random() - 0.5) * 1.2,
-      alpha: Math.random() * 0.6 + 0.4
-    });
+    particles.push(new Particle());
   }
 
-  function drawParticles() {
+  function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 255, 255, ${p.alpha})`;
-      ctx.shadowBlur = 20;
-      ctx.shadowColor = "#00ffff";
-      ctx.fill();
-
-      p.x += p.speedX;
-      p.y += p.speedY;
-
-      if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+      p.update();
+      p.draw();
     });
-    requestAnimationFrame(drawParticles);
+    requestAnimationFrame(animate);
   }
-
-  drawParticles();
+  animate();
 
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
