@@ -26,129 +26,232 @@ body {
   background: radial-gradient(circle at top left, #0b0f16 0%, #05070a 100%);
 }
 
-/* === PAGE CONTAINER === */
+/* === MAIN CONTAINER === */
 main {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 5rem 2rem 3rem;
   min-height: 100vh;
+  gap: 3rem;
 }
 
 /* === HEADER === */
 header {
   background: rgba(15, 20, 28, 0.7);
   backdrop-filter: blur(10px);
-  padding: 3rem 2rem;
-  border-radius: 15px;
-  border: 3px solid rgba(0, 255, 255, 0.5);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-  max-width: 900px;
-  margin-bottom: 3rem;
+  padding: 3rem 3rem 4rem;
+  border-radius: 20px;
+  border: 3px solid rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+  max-width: 950px;
+  margin-bottom: 2rem;
 }
 
 header h1 {
   font-size: 3rem;
   color: #00ffff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
 }
 
 header p {
   font-size: 1.1rem;
   color: #c8d6e5;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* === NAVIGATION === */
 nav {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
-/* === COOL GLOW BUTTONS === */
+/* === ELECTRIC GLOW BUTTONS === */
 nav a, .btn, .button {
   position: relative;
   color: #0d1117;
   background: linear-gradient(90deg, #00ffff, #00bfff, #0077ff);
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   border: none;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
   transition: all 0.3s ease;
+  display: inline-block;
+  overflow: hidden;
 }
 
+/* Electric halo pulse */
+nav a::before, .btn::before, .button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.6) 10%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  border-radius: 50%;
+  transition: all 0.4s ease-out;
+}
+
+/* On hover: bright cyan glow and subtle motion */
 nav a:hover, .btn:hover, .button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.8);
   background: linear-gradient(90deg, #00ccff, #007bff, #00ffff);
 }
 
-/* === SECTIONS === */
+/* On click: small electric ripple around button */
+nav a:active::before, .btn:active::before, .button:active::before {
+  width: 200%;
+  height: 200%;
+  opacity: 0.2;
+  transition: 0s;
+}
+
+/* Section pulse effect when button hovered */
+section:hover {
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.4);
+  transition: box-shadow 0.4s ease;
+}
+
+/* === SECTION STYLING === */
 section {
   position: relative;
   z-index: 1;
-  padding: 2rem;
+  padding: 3rem 3rem 3.5rem;
   max-width: 1100px;
   margin: 2rem auto;
-  background: rgba(12, 18, 28, 0.8);
-  border-radius: 15px;
+  background: rgba(12, 18, 28, 0.85);
+  border-radius: 18px;
   border: 3px solid rgba(0, 255, 255, 0.6);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
   text-align: left;
+  line-height: 1.8;
 }
 
-/* === PROJECT CARDS === */
+section h2 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* === PROJECTS GRID (HORIZONTAL) === */
 .projects {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 2rem;
-  padding: 1rem 0;
+  gap: 2.5rem;
+  padding: 2rem 0 1rem;
   justify-content: center;
   scroll-behavior: smooth;
 }
 
 .project-card {
   background: rgba(10, 15, 25, 0.95);
-  padding: 1.5rem;
-  border-radius: 12px;
-  flex: 0 0 300px;
-  border: 3px solid rgba(0, 255, 255, 0.5);
+  padding: 2rem;
+  border-radius: 15px;
+  flex: 0 0 320px;
+  border: 3px solid rgba(0, 255, 255, 0.6);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+.project-card h3 {
+  margin-bottom: 0.75rem;
+  color: #00ffff;
 }
 
-/* === TITLES === */
-h2 {
+.project-card p {
+  margin-bottom: 1.5rem;
+  color: #b0c7d6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+/* === PROJECT DETAIL PAGES === */
+.section-card h1 {
   color: #00ffff;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #9ee6ff;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.feature-list li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.feature-list li::before {
+  content: "⚡";
+  color: #00ffff;
+  position: absolute;
+  left: 0;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 /* === FOOTER === */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 1rem 1rem;
   color: #aaa;
   margin-top: 3rem;
   font-size: 0.9rem;
   border-top: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+/* === PULSING BORDER ANIMATION === */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(0, 255, 255, 0.7);
+  }
+}
+
+.project-card,
+header,
+section {
+  animation: neonPulse 3s infinite alternate;
 }
