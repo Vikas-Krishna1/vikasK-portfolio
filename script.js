@@ -1,34 +1,24 @@
+// ParticleJS Initialization
 particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 70 },
-    "color": { "value": "#00c6ff" },
-    "shape": { "type": "circle" },
-    "opacity": {
-      "value": 0.5,
-      "random": true
+  particles: {
+    number: { value: 80 },
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 2 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1
     },
-    "size": {
-      "value": 2,
-      "random": true
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ff758c",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2,
-      "direction": "none",
-      "out_mode": "out"
-    }
+    move: { enable: true, speed: 2 }
   },
-  "interactivity": {
-    "events": {
-      "onhover": { "enable": true, "mode": "repulse" }
-    }
+  interactivity: {
+    detect_on: "canvas",
+    events: { onhover: { enable: true, mode: "repulse" } },
+    modes: { repulse: { distance: 100 } }
   },
-  "retina_detect": true
+  retina_detect: true
 });
