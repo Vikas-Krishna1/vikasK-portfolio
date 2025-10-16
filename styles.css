@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d0d1a;
   color: #f4f4f4;
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
   overflow-x: hidden;
 }
 
@@ -16,69 +16,71 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 header {
   text-align: center;
-  padding: 5rem 1rem 2rem 1rem;
+  padding: 5rem 1rem;
 }
 
-header h1 {
+.hero h1 {
   font-size: 3rem;
   font-weight: 700;
   background: linear-gradient(90deg, #00c6ff, #ff758c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-header p {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #e8e8e8;
-}
-
-.header-buttons {
-  margin-top: 1.5rem;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #00c6ff, #ff758c);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s ease, opacity 0.2s;
-}
-
-.button:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+.subtitle {
+  color: #cfcfcf;
+  margin-bottom: 1.5rem;
 }
 
 nav {
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 nav a {
-  color: #fff;
-  font-weight: 600;
+  color: #ffffffcc;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #00c6ff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00c6ff, #ff758c);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 section {
   max-width: 1000px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 h2 {
@@ -88,42 +90,27 @@ h2 {
   color: #00c6ff;
 }
 
-.projects {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
-.project-card {
-  background: rgba(255, 255, 255, 0.1);
+.card {
   padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-}
-
-.certifications {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  text-align: center;
-}
-
-.certifications img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
+.card:hover {
+  transform: translateY(-6px);
 }
 
 footer {
   text-align: center;
   padding: 1.5rem;
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
 }
