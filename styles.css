@@ -5,112 +5,121 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #0d0d1a;
-  color: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c, #1a1a2e);
+  color: white;
   overflow-x: hidden;
 }
 
 #particles-js {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  top: 0;
-  left: 0;
 }
 
-header {
+header.hero {
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 10vh 2rem;
 }
 
-.hero h1 {
+header.hero h1 {
   font-size: 3rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #00c6ff, #ff758c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
-.subtitle {
-  color: #cfcfcf;
-  margin-bottom: 1.5rem;
+header.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+.buttons {
   margin-top: 2rem;
-}
-
-nav a {
-  color: #ffffffcc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: #00c6ff;
 }
 
 .btn {
   display: inline-block;
+  margin: 0.5rem;
   padding: 10px 20px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #00c6ff, #ff758c);
+  background: #00d9ff;
   color: #fff;
   text-decoration: none;
+  border-radius: 30px;
   font-weight: bold;
-  margin: 5px;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  background: #00b8d4;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #00d9ff;
+}
+
+.btn.small {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+}
+
+nav {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #00d9ff;
 }
 
 section {
+  padding: 4rem 2rem;
   max-width: 1000px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  margin: auto;
 }
 
-h2 {
+section h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #00c6ff;
+  margin-bottom: 2rem;
+  color: #00e0ff;
 }
 
-.grid {
+.project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .card {
+  background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.05);
 }
