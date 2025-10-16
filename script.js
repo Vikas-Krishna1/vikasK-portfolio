@@ -1,4 +1,3 @@
-// ParticleJS Initialization
 particlesJS("particles-js", {
   particles: {
     number: { value: 80 },
