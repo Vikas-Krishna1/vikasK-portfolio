@@ -9,24 +9,25 @@ document.addEventListener("DOMContentLoaded", () => {
     particleCanvas.height = lightningCanvas.height = window.innerHeight;
   }
   resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
 
+  /* === LINE + DOT PARTICLES === */
   const particles = [];
-  const particleCount = 90;
-  const maxDistance = 130;
+  const particleCount = 80;
+  const maxDistance = 140;
 
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * particleCanvas.width,
       y: Math.random() * particleCanvas.height,
       size: Math.random() * 2 + 1,
-      speedX: (Math.random() - 0.5) * 0.6,
-      speedY: (Math.random() - 0.5) * 0.6,
+      speedX: (Math.random() - 0.5) * 0.8,
+      speedY: (Math.random() - 0.5) * 0.8,
     });
   }
 
   function drawParticles() {
     ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
-
     for (let i = 0; i < particleCount; i++) {
       const p = particles[i];
       p.x += p.speedX;
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const dx = p.x - p2.x;
         const dy = p.y - p2.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
         if (distance < maxDistance) {
           ctx.beginPath();
           ctx.strokeStyle = `rgba(0,255,255,${1 - distance / maxDistance})`;
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(drawParticles);
   }
 
+  /* === LIGHTNING OVERLAY === */
   function lightningEffect() {
     ltx.clearRect(0, 0, lightningCanvas.width, lightningCanvas.height);
     if (Math.random() < 0.02) {
@@ -76,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const y = startY + (endY - startY) * (i / 10);
         ltx.lineTo(x, y);
       }
-
       ltx.stroke();
     }
     requestAnimationFrame(lightningEffect);
@@ -84,6 +84,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   drawParticles();
   lightningEffect();
-
-  window.addEventListener("resize", resizeCanvas);
 });
