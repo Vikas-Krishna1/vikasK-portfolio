@@ -7,7 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
   body.style.transition = "opacity 0.6s ease-in";
   setTimeout(() => (body.style.opacity = 1), 100);
 
-  // Fade out before navigating to new page
+  // Smooth scroll for internal section links (#about, #projects, etc.)
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 20,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Fade out before navigating to other pages (.html)
   const links = document.querySelectorAll("a[href$='.html']");
   links.forEach(link => {
     link.addEventListener("click", e => {
@@ -35,25 +49,35 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  // Darker, subtler particles
   const particles = [];
-  const particleCount = 60;
-
+  const particleCount = 80;
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 3 + 1,
-      speedX: (Math.random() - 0.5) * 0.5,
-      speedY: (Math.random() - 0.5) * 0.5,
+      size: Math.random() * 2 + 0.5,
+      speedX: (Math.random() - 0.5) * 0.3,
+      speedY: (Math.random() - 0.5) * 0.3,
     });
   }
 
+  // Gradient background
+  function drawBackground() {
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, "#0a0a1f");
+    gradient.addColorStop(1, "#1c1c3c");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // Animate particles
   function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBackground();
     particles.forEach(p => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(0, 120, 215, 0.25)";
+      ctx.fillStyle = "rgba(0, 180, 255, 0.15)";
       ctx.fill();
       p.x += p.speedX;
       p.y += p.speedY;
@@ -66,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animateParticles();
 
-  // Resize canvas on window resize
+  // Resize responsiveness
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
