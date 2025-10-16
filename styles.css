@@ -29,7 +29,7 @@ body {
 .content {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 1rem 6rem;
   display: flex;
@@ -37,14 +37,14 @@ body {
   gap: 2rem;
 }
 
-/* === INTRO SECTION === */
+/* === INTRO === */
 .intro {
   text-align: center;
-  background: rgba(15, 25, 35, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(15, 25, 35, 0.7);
+  border: 2px solid #00ffff;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.2);
   backdrop-filter: blur(8px);
 }
 
@@ -56,79 +56,104 @@ body {
 
 .intro p {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
   font-size: 1.1rem;
 }
 
-nav {
-  margin-top: 1.2rem;
+/* === NAV BUTTONS === */
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-nav a {
-  color: #00ccff;
-  margin: 0 12px;
+.btn-nav {
+  display: inline-block;
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-nav a:hover {
-  color: #66ffff;
-  text-shadow: 0 0 8px #00ffff;
+.btn-nav:hover {
+  background: #00ffff;
+  color: #0b0f16;
+  box-shadow: 0 0 25px #00ffff;
+  transform: translateY(-2px);
 }
 
-/* === SECTION CARD STYLE === */
+/* === SECTIONS === */
 .section-card {
   background: rgba(15, 20, 28, 0.7);
-  border: 1px solid rgba(0, 255, 255, 0.25);
-  border-radius: 12px;
+  border: 2px solid #00ffff;
+  border-radius: 14px;
   padding: 2rem;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
   backdrop-filter: blur(6px);
 }
 
 .section-card h2 {
   color: #00c8ff;
   margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.5);
   padding-bottom: 0.5rem;
+  text-align: center;
 }
 
-/* === PROJECT CARDS INSIDE === */
+/* === PROJECTS GRID === */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
 .project {
-  background: rgba(10, 15, 25, 0.8);
-  padding: 1.3rem;
-  margin-bottom: 1.2rem;
+  flex: 1 1 300px;
+  background: rgba(10, 15, 25, 0.9);
+  padding: 1.5rem;
   border-radius: 10px;
-  border: 1px solid rgba(0, 255, 255, 0.15);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  max-width: 310px;
 }
 
 .project:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.4);
 }
 
-/* === BUTTON === */
+/* === BUTTONS === */
 .btn {
   display: inline-block;
   color: #00ffff;
-  border: 1px solid #00ffff;
-  padding: 0.5rem 1rem;
+  border: 2px solid #00ffff;
+  padding: 0.6rem 1.4rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: 0.3s;
   font-weight: 600;
+  transition: 0.3s ease;
+  margin-top: 0.6rem;
 }
 
 .btn:hover {
   background: #00ffff;
   color: #0b0f16;
-  box-shadow: 0 0 20px #00ffff;
+  box-shadow: 0 0 25px #00ffff;
+  transform: translateY(-2px);
 }
 
-/* === CONTACT SECTION === */
+/* === CONTACT === */
 .contact-section {
   text-align: center;
 }
@@ -148,6 +173,6 @@ footer {
   text-align: center;
   color: #8aa1ad;
   padding: 2rem 0;
-  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  border-top: 2px solid rgba(0, 255, 255, 0.4);
   margin-top: auto;
 }
